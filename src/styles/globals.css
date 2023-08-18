@@ -2,26 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer utilities {
+    .content {
+        @apply tracking-widest whitespace-pre-wrap text-[#1A202C]
+    }
+    .content h1 {
+        @apply mt-10 font-bold text-3xl
+    }
+    .content h2 {
+        @apply mt-8 font-bold text-xl
+    }
+    .content h3 {
+        @apply inline-block mt-8 font-bold text-lg md:text-xl border-b
+    }
+    .content h4 {
+        @apply mt-4 font-bold text-base
+    }
+    .content p {
+        @apply text-base leading-loose
+    }
+    .content a {
+        @apply underline
+    }
+    .content pre {
+        @apply my-2 rounded-md
+    }
+    .content pre code {
+        @apply text-base text-white rounded-md
+    }
+    .content p code {
+        @apply rounded-md py-[1px] px-2 text-xs
+    }
+    .content ul {
+        @apply py-2 px-6
+    }
+    .content li {
+        @apply list-disc text-base
+    }
+    .content img {
+        @apply mt-5
+    }
+    .content hr {
+      @apply  mt-8 mx-auto
+    }
 }
