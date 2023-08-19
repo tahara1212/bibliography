@@ -1,6 +1,6 @@
 import Head from "next/head";
-import { Navigation } from "@/components/elements/navigation";
-import { Header } from "@/components/elements/header";
+import { Navigation } from "@/components/navigation";
+import { Header } from "@/components/header";
 import { HEADER_HEIGHT, MAX_WIDTH, TITLE } from "@/const/util";
 import { ReactNode } from "react";
 
@@ -20,8 +20,10 @@ export const Layout = ({children}: Props) => {
       <Header />
       <div className={`mx-auto max-w-[1440px]`}>
         <div className="flex">
-          <main className={`w-[calc(70%-100px)] my-10 mr-24 bg-white`}>
-            {children}
+          <main className={`w-[calc(70%-100px)] my-20 ml-16 mr-24 bg-white`}>
+            <article className="leading-none">
+              {children}
+            </article>
           </main>
           <Navigation />
         </div>

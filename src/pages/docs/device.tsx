@@ -1,14 +1,20 @@
-import { ArticleLayout } from "@/components/layouts/articleLayout";
-import { Layout } from "@/components/layouts/layout";
-import ReactMarkdown from 'react-markdown';
-import { md } from '@/md/device';
+import CodeBlock from "@/components/codeBlock";
+import { Layout } from "@/components/layout";
+import { useFetchMarkdown } from "@/hooks/useFetchMarkdown";
+import ReactMarkdown from "react-markdown";
 
 export default function Device() {
+  const markdown = useFetchMarkdown("/md/01/device.md");
   return (
     <Layout>
-      <ArticleLayout>
-        <ReactMarkdown>{md}</ReactMarkdown>
-      </ArticleLayout>
+      <ReactMarkdown
+        className="content"
+        components={{
+          code: CodeBlock,
+        }}
+      >
+        {markdown}
+      </ReactMarkdown>
     </Layout>
-  )
+  );
 }

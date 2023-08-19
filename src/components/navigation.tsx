@@ -17,12 +17,12 @@ export const Navigation = () => {
         <div className="flex flex-col gap-4 w-full text-left overflow-y-auto">
           {navigationItems.map((nav, i) => (
             <div key={nav.chapter}>
-              <div className={`flex items-center text-[16px] font-bold cursor-pointer ${openList[i] ? 'text-white' : 'text-gray-900'} hover:text-white hover:opacity-80`} onClick={() => onClickNavBtn(i)}>
+              <div className={`flex items-center text-[16px] font-bold cursor-pointer ${openList[i] ? 'text-white' : 'text-gray-900'} transition-all duration-200 hover:text-white hover:opacity-80`} onClick={() => onClickNavBtn(i)}>
                 {nav.chapter}
               </div>
               {openList[i] &&
                 nav.list.map((list) => (
-                  <Link key={list.title} href={`/docs/${list.link}`} className="hover:opacity-60 no-underline">
+                  <Link key={list.title} href={`/docs/${list.link}`} className="transition-all duration-200 hover:opacity-60 no-underline">
                     <p
                       className={`${openList[i] ? 'text-white' : 'text-black'} pl-2 text-[14px]`}
                     >
@@ -34,7 +34,6 @@ export const Navigation = () => {
           ))}
         </div>
       </nav>
-      teest
     </aside>
   );
 };

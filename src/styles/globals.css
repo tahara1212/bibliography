@@ -4,7 +4,7 @@
 
 @layer utilities {
     .content {
-        @apply tracking-widest whitespace-pre-wrap text-[#1A202C]
+        @apply tracking-wider whitespace-pre-wrap text-[#1A202C]
     }
     .content h1 {
         @apply mt-10 font-bold text-3xl
@@ -25,13 +25,13 @@
         @apply underline
     }
     .content pre {
-        @apply my-2 rounded-md
+        @apply rounded-md m-0
     }
     .content pre code {
-        @apply text-base text-white rounded-md
+        @apply text-base rounded-md
     }
     .content p code {
-        @apply rounded-md py-[1px] px-2 text-xs
+        @apply rounded-md text-xs
     }
     .content ul {
         @apply py-2 px-6
@@ -44,5 +44,8 @@
     }
     .content hr {
       @apply  mt-8 mx-auto
+    }
+    .content blockquote {
+        @apply flex text-gray-400 italic border-l-4 px-4
     }
 }

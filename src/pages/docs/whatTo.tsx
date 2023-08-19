@@ -1,14 +1,20 @@
-import { ArticleLayout } from "@/components/layouts/articleLayout";
-import { Layout } from "@/components/layouts/layout";
-import ReactMarkdown from 'react-markdown';
-import { md } from '@/md/whatTo';
+import { Layout } from "@/components/layout";
+import ReactMarkdown from "react-markdown";
+import { useFetchMarkdown } from "@/hooks/useFetchMarkdown";
+import CodeBlock from "@/components/codeBlock";
 
 export default function WhatTo() {
+  const markdown = useFetchMarkdown("/md/01/whatTo.md");
   return (
     <Layout>
-      <ArticleLayout>
-        <ReactMarkdown>{md}</ReactMarkdown>
-      </ArticleLayout>
+      <ReactMarkdown
+        className="content"
+        components={{
+          code: CodeBlock,
+        }}
+      >
+        {markdown}
+      </ReactMarkdown>
     </Layout>
-  )
+  );
 }
